@@ -31,11 +31,11 @@ namespace Triangle
             if (!InitVertexBuffers()) return;
 
             Matrix4 modelMatrix =
-                Matrix4.CreateTranslation(0.5f, 0.5f, 0f) *
+                Matrix4.CreateScale(0.5f) *
                 Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(20f)) *
-                Matrix4.CreateScale(0.5f);
+                Matrix4.CreateTranslation(0.5f, 0.5f, 0f);
 
-            int uModelMatrixLocation = GL.GetUniformLocation(_programId, "uModelMatrix");
+        int uModelMatrixLocation = GL.GetUniformLocation(_programId, "uModelMatrix");
             if (uModelMatrixLocation == -1)
             {
                 Debug.Assert(false, "Failed to get uModelMatrix");
